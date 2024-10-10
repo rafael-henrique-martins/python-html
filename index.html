@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Horizontal</title>
+    <!-- Adicionando o Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .header img {
+            height: 50px; /* tamanho padrão para a imagem da direita */
+        }
+        .header img.left {
+            height: 80px; /* tamanho aumentado para a imagem da esquerda */
+        }
+        .header img.right {
+            margin-top: -30px; /* ajusta a imagem da direita para cima */
+            margin-left: 10px; /* desloca a imagem da direita para a esquerda */
+        }
+        .header-text {
+            margin-left: 15px; /* desloca o texto para a esquerda */
+            margin-right: 15px;
+            font-size: 20px; /* ajuste o tamanho do texto */
+        }
+
+        /* Novo estilo para o contêiner no final da página */
+        .footer-icons {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            text-align: right;
+        }
+        .footer-icons h6 {
+            margin-bottom: 15px;
+            font-size: 14px;
+            margin-right: 55px;
+        }
+        .footer-icons .icon-container {
+            display: flex;
+            align-items: center; /* Alinha ícones e descrições horizontalmente */
+            margin-bottom: 10px; /* Espaçamento entre cada linha de ícone e descrição */
+        }
+        .footer-icons i {
+            font-size: 17px; /* Tamanho dos ícones */
+            margin-right: 10px; /* Espaçamento entre o ícone e a descrição */
+        }
+        .footer-icons .icon-description {
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="img_1.png" alt="Imagem Esquerda" class="left">
+        <div class="header-text">Claro! Aqui está o código HTML ajustado para alterar o tamanho de uma das imagens e deslocar o texto para a esquerda:</div>
+        <img src="img.png" alt="Imagem Direita" class="right">
+    </div>
+
+    <!-- Novo conteúdo no canto direito da tela -->
+    <div class="footer-icons">
+        <h6>Legendas</h6>
+
+        <div class="icon-container">
+            <i class="fa fa-exclamation-triangle"></i>
+            <div class="icon-description">Não executado</div>
+        </div>
+
+        <div class="icon-container">
+            <i class="fa fa-check-circle"></i>
+            <div class="icon-description">Finalizado com desvio</div>
+        </div>
+
+        <div class="icon-container">
+            <i class="fa fa-info-circle"></i>
+            <div class="icon-description">Finalizado com sucesso</div>
+        </div>
+    </div>
+
+</body>
+</html>
