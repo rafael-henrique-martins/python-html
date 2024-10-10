@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Layout Horizontal</title>
+    <!-- Adicionando o Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         .header {
@@ -28,17 +29,8 @@
             margin-right: 15px;
             font-size: 20px; /* ajuste o tamanho do texto */
         }
-        .hipoteses-list {
-            margin: 20px 15px; /* espaçamento em torno da lista */
-            font-size: 18px; /* ajuste o tamanho do texto da lista */
-        }
-        .hipoteses-list div {
-            display: block; /* Cada item ocupará uma linha */
-            margin-bottom: 10px; /* Espaçamento entre as hipóteses */
-        }
-        .hipoteses-list div i {
-            margin-right: 10px; /* Espaçamento entre o ícone e o texto */
-        }
+
+        /* Novo estilo para o contêiner no final da página */
         .footer-icons {
             position: fixed;
             bottom: 10px;
@@ -68,18 +60,11 @@
 
     <div class="header">
         <img src="img_1.png" alt="Imagem Esquerda" class="left">
-        <div class="header-text" id="headerText"></div>
+        <div class="header-text">Claro! Aqui está o código HTML ajustado para alterar o tamanho de uma das imagens e deslocar o texto para a esquerda:</div>
         <img src="img.png" alt="Imagem Direita" class="right">
     </div>
 
-    <div class="hipoteses-list">
-        <div id="textoSNS" style="font-size: 16px; margin-bottom: 10px;"></div> <!-- Espaço para o texto_sns -->
-        <h2>Hipóteses:</h2>
-        <div id="hipotesesList">
-            <!-- A lista de hipóteses será inserida aqui -->
-        </div>
-    </div>
-
+    <!-- Novo conteúdo no canto direito da tela -->
     <div class="footer-icons">
         <h6>Legendas</h6>
 
@@ -98,34 +83,6 @@
             <div class="icon-description">Finalizado com sucesso</div>
         </div>
     </div>
-
-    <script>
-        // Simulação do JSON recebido
-        const jsonData = {
-            "nome_produto": "exemplo",
-            "texto_sns": "texto envio via sns para o sub titulo",
-            "sigla": "sdf",
-            "hipoteses": [
-                {"hipotese": "exemplo para lambda 1"},
-                {"hipotese": "exemplo para lambda 2"},
-                {"hipotese": "exemplo para lambda 3"}
-            ]
-        };
-
-        // Atualizando o texto do cabeçalho
-        document.getElementById('headerText').innerText = `${jsonData.sigla}, ${jsonData.nome_produto}`;
-
-        // Exibindo o texto_sns
-        document.getElementById('textoSNS').innerText = jsonData.texto_sns;
-
-        // Criando a lista de hipóteses
-        const hipotesesList = document.getElementById('hipotesesList');
-        jsonData.hipoteses.forEach(item => {
-            const listItem = document.createElement('div');
-            listItem.innerHTML = `<i class="fa fa-question-circle"></i>${item.hipotese}`;
-            hipotesesList.appendChild(listItem);
-        });
-    </script>
 
 </body>
 </html>
