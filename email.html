@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Email</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        .header img {
+            max-height: 80px;
+            width: auto;
+        }
+        .header-text {
+            font-size: 24px;
+            margin: 20px 0;
+            color: #333333;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .hipoteses-list {
+            padding: 0;
+            list-style-type: none;
+        }
+        .hipoteses-list li {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #888888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="img_1.png" alt="Imagem Esquerda" />
+            <div class="header-text">{texto_sns}</div>
+            <img src="img.png" alt="Imagem Direita" />
+        </div>
+
+        <div class="content">
+            <p><strong>Gameday agendado:</strong> para o dia 1/1/21 na sigla <strong>{sigla}</strong>, para a conta <strong>{nome_produto}</strong></p>
+
+            <h2>Hipóteses:</h2>
+            <ul class="hipoteses-list">
+                {''.join([f'<li>{hipotese["hipotese"]}</li>' for hipotese in hipoteses])}
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p><strong>Legendas:</strong></p>
+            <p>🚨 Não executado | ✅ Finalizado com desvio | ℹ️ Finalizado com sucesso</p>
+        </div>
+    </div>
+</body>
+</html>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+        <td align="center">
+            <table width="600" cellpadding="0" cellspacing="0" border="0" style="border: 1px solid #ddd; border-radius: 5px; background-color: #ffffff;">
+                <tr>
+                    <td style="text-align: center; padding: 20px; border-bottom: 1px solid #ddd;">
+                        <img src="img_1.png" alt="Imagem Esquerda" style="max-height: 80px; width: auto;" />
+                        <div style="font-size: 24px; margin: 20px 0; color: #333333;">{texto_sns}</div>
+                        <img src="img.png" alt="Imagem Direita" style="max-height: 80px; width: auto;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 20px;">
+                        <p><strong>Gameday agendado:</strong> para o dia 1/1/21 na sigla <strong>{sigla}</strong>, para a conta <strong>{nome_produto}</strong></p>
+
+                        <h2 style="font-size: 20px; margin-bottom: 10px;">Hipóteses:</h2>
+                        <ul style="padding: 0; list-style-type: none;">
+                            {''.join([f'<li style="background-color: #f9f9f9; padding: 10px; margin-bottom: 10px; border-radius: 4px; font-size: 16px;">{hipotese["hipotese"]}</li>' for hipotese in hipoteses])}
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; font-size: 12px; color: #888888;">
+                        <p><strong>Legendas:</strong></p>
+                        <p>🚨 Não executado | ✅ Finalizado com desvio | ℹ️ Finalizado com sucesso</p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

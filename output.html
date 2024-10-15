@@ -1,0 +1,104 @@
+
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Layout Horizontal</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            .header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px;
+                border-bottom: 1px solid #ccc;
+            }
+            .header img {
+                height: 50px;
+            }
+            .header img.left {
+                height: 80px;
+            }
+            .header img.right {
+                margin-top: -30px;
+                margin-left: 10px;
+            }
+            .header-text {
+                margin-left: 15px;
+                margin-right: 15px;
+                font-size: 35px;
+            }
+            .hipoteses-list {
+                margin: 20px 15px;
+                font-size: 18px;
+            }
+            .hipoteses-list div {
+                display: block;
+                margin-bottom: 10px;
+            }
+            .hipoteses-list div i {
+                margin-right: 10px;
+            }
+            .footer-icons {
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+                text-align: right;
+            }
+            .footer-icons h6 {
+                margin-bottom: 15px;
+                font-size: 14px;
+                margin-right: 55px;
+            }
+            .footer-icons .icon-container {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+            }
+            .footer-icons i {
+                font-size: 17px;
+                margin-right: 10px;
+            }
+            .footer-icons .icon-description {
+                font-size: 12px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="header">
+            <img src="img_1.png" alt="Imagem Esquerda" class="left">
+            <div class="header-text" id="textoSNS">IUChaos Gameday, resiliência, fv4, contas a pagar</div>
+            <img src="img.png" alt="Imagem Direita" class="right">
+        </div>
+
+        <div class="hipoteses-list">
+            <div id="headerText" style="font-size: 16px; margin-bottom: 10px;">gameday agendado para o dia 1/1/21 na sigla ABC, para a conta exemplo_produto</div>
+            <h2>Hipóteses:</h2>
+            <div id="hipotesesList">
+                <div><i class="fa fa-question-circle"></i>exemplo para lambda 1</div><div><i class="fa fa-question-circle"></i>exemplo para lambda 2</div><div><i class="fa fa-question-circle"></i>exemplo para lambda 3</div>
+            </div>
+        </div>
+
+        <div class="footer-icons">
+            <h6>Legendas</h6>
+
+            <div class="icon-container">
+                <i class="fa fa-exclamation-triangle"></i>
+                <div class="icon-description">Não executado</div>
+            </div>
+
+            <div class="icon-container">
+                <i class="fa fa-check-circle"></i>
+                <div class="icon-description">Finalizado com desvio</div>
+            </div>
+
+            <div class="icon-container">
+                <i class="fa fa-info-circle"></i>
+                <div class="icon-description">Finalizado com sucesso</div>
+            </div>
+        </div>
+    </body>
+    </html>
+    
