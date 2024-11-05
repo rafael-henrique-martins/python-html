@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Email Dinâmico</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; /* Fundo branco */
+            font-family: Arial, sans-serif;
+            color: #000000; /* Texto preto */
+        }
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff; /* Fundo branco */
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        .header img {
+            max-height: 80px;
+            width: auto;
+        }
+        .header-text {
+            font-size: 24px;
+            text-align: center;
+            flex: 1;
+            margin: 0 20px;
+            color: #000000; /* Texto preto */
+        }
+        .content {
+            padding: 20px;
+        }
+        .content h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #000000; /* Título preto */
+        }
+        .hipoteses-list {
+            padding: 0;
+            list-style-type: none;
+        }
+        .hipoteses-list li {
+            background-color: #f9f9f9; /* Fundo claro para as hipóteses */
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            font-size: 16px;
+            color: #000000; /* Texto preto */
+        }
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 15px;
+            color: #000000; /* Texto preto */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <img src="img_1.png" alt="Imagem Esquerda" />
+            <div class="header-text">IUChaos Gameday, resiliência, fv4, contas a pagar - teste do tamanho do nome da coisa</div>
+            <img src="img.png" alt="Imagem Direita" />
+        </div>
+
+        <div class="content">
+            <p><strong>Gameday agendado:</strong> para o dia 1/1/21 na sigla <strong>ABC</strong>, para a conta <strong>exemplo_produto</strong></p>
+
+            <h2>Hipóteses:</h2>
+            <ul class="hipoteses-list" id="hipoteses-list">
+                {%for hipotese in hipoteses%}
+                <p>&#x23FO; &nbsp; servico &nbsp {{hipotese}}</p>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p><strong>Legendas:</strong></p>
+            <p>
+                <span style="color: black;">&#x23F0; Aguardando execução</span> |
+                <span style="color: red;">&#x26A0;️ Finalizado com desvio</span> |
+                <span style="color: green;">&#x2714; Aprovado</span>
+            </p>
+
+        </div>
+    </div>
+
+    <script>
+        // Lista de hipóteses
+        const hipoteses = [
+            'exemplo para lambda 1',
+            'exemplo para lambda 2',
+            'exemplo para lambda 3',
+            'exemplo para lambda 1',
+            'exemplo para lambda 2'
+        ];
+
+        // Seleciona o elemento <ul> onde as hipóteses serão inseridas
+        const ulElement = document.getElementById('hipoteses-list');
+
+        // Função para adicionar itens na lista
+        hipoteses.forEach(function(hipotese) {
+            const li = document.createElement('li');
+            li.textContent = hipotese;
+            ulElement.appendChild(li);
+        });
+    </script>
+
+</body>
+</html>
