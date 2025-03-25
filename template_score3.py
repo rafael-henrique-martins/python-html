@@ -57,16 +57,17 @@ html_template = """<!DOCTYPE html>
 
     {% for diretoria in diretorias %}
     <div style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); width: 100%; max-width: 700px; text-align: center;">
-       <div style="background: #DCDCDC; padding: 10px; border-radius: 8px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); display: flex; align-items: center; justify-content: space-between;">
-                <p style="margin: 5px 0; font-weight: bold; flex: 1; text-align: left;">{{ diretoria.squad }}</p>
-
+       <div style="background: #DCDCDC; padding: 2px; border-radius: 8px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+       display: flex; align-items: center; justify-content: space-between;width: 30%;min-width: 20px;margin-left:10px">
+                <p style="margin: 5px 0; font-weight: bold; flex: 1; text-align: left;margin-left:4px;">Codigo Squad ({{ diretoria.squad }})</p>
+</div>
         <div style="display: flex; flex-direction: column; gap: 10px; padding: 10px;">
             {% for squad in diretoria.dados %}
             <div style="background: blue; padding: 1px; border-radius: 8px; 
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
             display: flex; align-items: center; width: 90%; min-width: 500px;">
 
-                <p style="margin: 5px 0; font-weight: bold; flex: 1; text-align: left;gap: 5px;">{{ squad.conta }}</p>
+                <p style="margin: 5px 0; font-weight: bold; flex: 1; text-align: left;gap: 5px;margin-left:4px">{{ squad.conta }}</p>
 
                 <span style="width: 20px; height: 20px; border-radius: 50%; display: inline-block; margin: 5px;
                     {% if squad.score > 94 %} background: green;
@@ -75,10 +76,10 @@ html_template = """<!DOCTYPE html>
                     {% else %} background: red;
                     {% endif %}">
                 </span>
-                <p style="margin: 5px; flex: 1; text-align: right;">{{ squad.score }}</p>
+                <p style="margin: 5px; flex: 1; text-align: right;">{{ squad.score }}%</p>
             </div>
             {% endfor %}
-        </div></div>
+        </div>
     </div>
     {% endfor %}
 
