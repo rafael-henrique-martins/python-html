@@ -47,4 +47,19 @@ def plot_speedometer(value, min_val=0, max_val=100):
 
 
 # Exemplo de uso
-plot_speedometer(60)  # Teste com valor 60
+plot_speedometer(60)  # Teste com valo60
+
+criar circolos
+<div style="font-family: Arial, sans-serif; text-align: center;">
+  <span style="color: red; font-size: 24px;">●</span> <strong>Crítico</strong>
+  <span style="color: orange; font-size: 24px;">●</span> <strong>Médio</strong>
+  <span style="color: blue; font-size: 24px;">●</span> <strong>Bom</strong>
+  <span style="color: green; font-size: 24px;">●</span> <strong>Ótimo</strong>
+  <br>
+  <span style="margin-right: 30px;">&lt;51</span>
+  <span style="margin-right: 30px;">&lt;81</span>
+  <span style="margin-right: 30px;">&lt;94</span>
+  <span>&gt;94</span>
+</div>
+
+
